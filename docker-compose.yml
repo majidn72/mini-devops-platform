@@ -13,10 +13,10 @@ services:
     container_name: backend
 
     environment:
-      DB_HOST: db
-      DB_NAME: appdb
-      DB_USER: devops
-      DB_PASSWORD: devops123
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
 
     networks:
      - app-network
@@ -26,9 +26,9 @@ services:
     image: postgres:15-alpine
     container_name: postgres-db
     environment:
-      POSTGRES_USER: devops
-      POSTGRES_PASSWORD: devops123
-      POSTGRES_DB: appdb
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - postgres-data:/var/lib/postgresql/data
     networks:
