@@ -1,1 +1,7 @@
 .env
+*.bak
+*.backup
+*.sql
+*.dump
+backup/
+backups/
