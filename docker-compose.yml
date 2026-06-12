@@ -9,9 +9,13 @@ services:
       - app-network
 
   backend:
-    build: ./backend
+    build: 
+      context: ./backend
+      args:
+        HTTP_PROXY: ${HTTP_PROXY}
+        HTTPS_PROXY: ${HTTPS_PROXY}
+        NO_PROXY: ${NO_PROXY}
     container_name: backend
-
     environment:
       DB_HOST: ${DB_HOST}
       DB_NAME: ${DB_NAME}
