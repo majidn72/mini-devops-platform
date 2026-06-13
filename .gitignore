@@ -7,3 +7,4 @@ backup/
 backups/
 __pycache__/
 *.pyc
+*.swp
